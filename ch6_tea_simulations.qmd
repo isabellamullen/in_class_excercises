@@ -197,7 +197,7 @@ tea_data_highn_shuffled <- samps_highn %>%
   mutate(condition_shuffled = sample(condition)) # shuffle the condition labels
 ```
 
-To do: check you understanding -- what is "sim" here?
+To do: check you understanding -- what is "sim" here? To do: check you understanding -- what is "sim" here? 
 
 ```{r}
 tea_data_highn_shuffled_summary <- tea_data_highn_shuffled %>%
@@ -234,7 +234,7 @@ ggplot(data = tea_data_highn_shuffled %>% filter(sim==3),  # can change the actu
                geom = "point",
                shape = 21,
                color = "black",
-               fill = "white")d + 
+               fill = "white") + 
   scale_y_continuous(breaks = 0:10,
                      labels = 0:10,
                      limits = c(0, 10))
@@ -419,6 +419,18 @@ Make a histogram What is the distribution of p-values when the null is true?
 Calculate the proportion of p-values that are less than .05 What was our false positive rate?
 
 ```{r}
+(all_results$pvalue)
+
+hist(all_results$pvalue, 
+     main = "Distribution of p-values", 
+     xlab = "p-value", 
+     breaks = 30, 
+     col = "blue", 
+     border = "white")
+
+prop_less_than_05 <- sum(all_results$pvalue < 0.05)
+prop_less_than_05
+
 
 ```
 
@@ -438,7 +450,7 @@ for (this_sim in 1:100) {
   
   this_exp_output = tibble(pvalue = output$p.value)
   all_results_high_n = bind_rows(all_results_high_n, this_exp_output)
-    
+  
 }
 ```
 
