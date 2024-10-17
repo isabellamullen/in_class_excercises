@@ -462,7 +462,7 @@ How often did we fail to reject the null hypothesis? When was our p-value greate
 
 # To finish up
 
-Publish this to an rpubs (time to set up if you haven't!)
+Publish this to an rpubs (time to set up if you haven't!) 
 
 # Excercises
 
