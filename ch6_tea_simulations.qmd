@@ -79,10 +79,10 @@ To do: Run these and look at the outputs by posting `out_low_n` in the console
 
 ```{r}
 out_low_n <- tea_data %>%
-  t.test(rating ~ condition, data = ., paired = FALSE, var.equal = TRUE) 
+  t.test(rating ~ condition, data = ., var.equal = TRUE) 
 
 out_high_n <- tea_data_highn %>%
-  t.test(rating ~ condition, data = ., paired = FALSE, var.equal = TRUE) 
+  t.test(rating ~ condition, data = ., var.equal = TRUE) 
 ```
 
 ### Simulate 1000 experiments
