@@ -61,7 +61,14 @@ To do: OK, look at these data frames. How long are they, what are the column nam
 To do: Write basic tidyverse code to calculate the mean of each condition (hint: use `group_by` and `summarize`)
 
 ```{r}
- 
+by_condition <- tea_data %>%
+  group_by(condition) %>%
+  summarize(mean_rating = mean(rating))
+
+by_condition_highn <- tea_data_highn %>%
+  group_by(condition) %>%
+  summarize(mean_rating = mean(rating))
+
 ```
 
 ## In this first draw, was it significant with N=9 or N=24 per group?
